@@ -1,0 +1,17 @@
+<p>list works!{{listmsg}}</p>
+<div>
+	<h3>id:{{list.id}}</h3>
+	<h3>name:{{list.name}}</h3>
+	<input type="text" [(ngModel)]="list.name" placeholder="name"/>
+	<h2>循环数据</h2>
+	<div class="heroes">
+		<ul>
+			<li *ngFor="let item of lists" (click)="onSelect(item)" [class.selected]="item==selectlist" >
+				<span class="badge">{{item.id}}</span>
+				<span class="text">{{item.name}}</span>
+			</li>
+		</ul>
+	</div>
+	<div *ngIf="selectlist">detail:{{selectlist.name}}</div>
+	<app-list-detail [selectlist]="selectlist"></app-list-detail>
+</div>

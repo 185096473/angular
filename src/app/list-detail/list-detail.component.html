@@ -1,0 +1,9 @@
+<div *ngIf="selectlist">
+    
+  <h2>{{selectlist.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectlist.id}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="selectlist.name" placeholder="name"/>
+    </label>
+</div>
